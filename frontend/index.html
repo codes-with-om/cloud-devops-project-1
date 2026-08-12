@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Project</title>
+</head>
+<body>
+
+    <h1>Cloud Project 1</h1>
+
+    <button onclick="getMessage()">
+        Get Message
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        async function getMessage() {
+            const response = await fetch("/api/message");
+            const data = await response.json();
+
+            document.getElementById("result").textContent = data.message;
+        }
+    </script>
+
+</body>
+</html>
